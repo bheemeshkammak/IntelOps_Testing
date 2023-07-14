@@ -1,0 +1,39 @@
+
+
+
+    
+# Curl commands for REST Server resource Team
+# Post
+curl -X POST -H "Content-Type: application/json" \
+-d '{"Length": defaultValue,"Width": defaultValue,"bandwidth": 1}' \
+http://localhost:8520/v1/teams
+
+# Get
+curl -X GET -H "Content-Type: application/json" \
+http://localhost:8520/v1/teams
+
+# Put
+curl -X PUT -H "Content-Type: application/json" \
+-d '{"Id": 123,"Length": defaultValue,"Width": defaultValue,"bandwidth": 1}' \
+http://localhost:8520/v1/teams/123
+
+# Put
+### wrong id passed in param
+curl -X PUT -H "Content-Type: application/json" \
+-d '{"Id": 123,"Length": defaultValue,"Width": defaultValue,"bandwidth": 1}' \
+http://localhost:8520/v1/teams/1234
+
+# Get  (retrieve specific Team)
+curl -X GET -H "Content-Type: application/json" \
+http://localhost:8520/v1/teams/123
+
+# Delete
+curl -X DELETE -H "Content-Type: application/json" \
+http://localhost:8520/v1/teams/123
+
+    
+
+# when mysql throws error about server connection, fire below commands
+# CREATE USER 'root'@'%' IDENTIFIED BY 'password';
+# GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
+

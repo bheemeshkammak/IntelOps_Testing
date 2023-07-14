@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: intelops_testing
+  labels:
+    app: intelops_testing
+  name: intelops_testing
+spec:
+  ports:
+  
+    - protocol: TCP
+      port: 8520
+      targetPort: 8520
+   
+   
+  selector:
+    app: intelops_testing
+  type: ClusterIP
